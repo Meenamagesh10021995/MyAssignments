@@ -1,17 +1,38 @@
-package assignment1;
+package assignment3;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class FindingMissingElement {
+
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] array = {1, 2, 3, 4, 10, 6, 8};
+		Arrays.sort(array);
+		// Convert the array to a list
+        List<Integer> list = new ArrayList<Integer>();
+        for (Integer num : array) {
+            list.add(num);
+        }
+        for (int i = 0; i < list.size() - 1; i++) {
+            int currentElement = list.get(i);
+            int nextElement = list.get(i + 1);
+
+            if (currentElement + 1 != nextElement) {
+                int missingElement = currentElement + 1;
+                System.out.println("Missing element in the list: " + missingElement);
+                
+            }
+        }
+    }
+}
+
+
+
 		
-		int a[]= {1,4,3,2,8,6,7};
-		int expected_no_elements=a.length+1;
-		int total_sum=expected_no_elements*(expected_no_elements+1)/2;
-		int sum=0;
-		for(int i=0;i<a.length;i++){
-			sum=sum+a[i];
-		}
-		System.out.println("missing no is:"+(total_sum-sum));	
 
-			}
+	
 
-		}
+
